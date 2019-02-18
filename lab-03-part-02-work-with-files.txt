@@ -36,7 +36,7 @@ $ touch foo.txt
 $ ls
 Copy and paste the output below.
 ----------
-
+foo.txt
 
 
 ==========
@@ -44,37 +44,51 @@ Copy and paste the output below.
 
 $ touch bar.txt
 ----------
-
-
+ls
+bar.txt	foo.txt
 
 ==========
 8. List the files in this directory using the flag that gives the most details.
 
 Copy and paste the output below.
 ----------
-
-
-
+ls -alt
+drwxr-xr-x  4 mikeparson  staff  128 Feb 18 00:47 .
+-rw-r--r--  1 mikeparson  staff    0 Feb 18 00:47 bar.txt
+-rw-r--r--  1 mikeparson  staff    0 Feb 18 00:46 foo.txt
+drwxr-xr-x  9 mikeparson  staff  288 Feb 18 00:46 ..
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
 
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
-
-
+cp -r bar.txt baz.txt
+ls
+bar.txt	baz.txt	foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+rm -rf bar.txt
+ls
+
+baz.txt	foo.txt
+
+
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
+mv foo.txt qux.txt
+ls
+
+baz.txt	qux.txt
 
 
 
@@ -90,7 +104,8 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
-
+rmdir my_files
+output: rmdir: my_files: Directory not empty
 
 
 ==========
@@ -98,7 +113,8 @@ Write out the command that you used and what happened.
 
 Write out the command that you used and what happened.
 ----------
-
+rm my_files
+rm: my_files: is a directory
 
 
 ==========
@@ -108,8 +124,8 @@ Force the removal of the directory and files using the -rf flag
 
 $ rm -rf my_files
 ----------
-
-
+ls
+books		logs		logs.tar	mtec1003-lab-03	web
 
 ==========
 16. There's a txt file version of a book located in the mtec1003-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -120,8 +136,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
-
+The e-book titled The Project Gutenberg EBook of The Prince, by Nicolo Machiavelli appeared, but it took a while to scroll through the book
 
 ==========
 17. That was a lot of text.  Let's find ways to limit it.  Using the same file...
@@ -132,7 +147,9 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+"head books/other/pg1232.txt"
 
+Title: The Prince
 
 
 ==========
@@ -144,9 +161,9 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below.
 ----------
+tail books/other/pg1232.txt
 
-
-
+subscribe to our email newsletter to hear about new eBooks.
 ==========
 19. Using the same file...
 
@@ -156,7 +173,8 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
-
+"more"
+space skips ahead while q quits the reading and goes back to the command line
 
 
 ==========
@@ -164,22 +182,34 @@ Write the command that you used below.  Describe what spacebar and q does after 
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
+less and more: used to show paging
+cat:shows everthing that a file contains
+tail: used to see the end of txt
+head:used to see the beginning of txt
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
-
+52639
+wc -w books/other/pg1232.txt
 
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
-
+5063 
+wc -l books/other/pg1232.txt
 
 ==========
 23.  Make sure you're in the books/other folder.  Copy all of the txt files from that folder to your home directory using wildcard matching.
 
 Write the command that you used below.
 ----------
+cp pg1232.txt ~
+cd ~
+
+~ mikeparson$ ls *pg1232.txt
+output: pg1232.txt
+
+
