@@ -84,7 +84,8 @@ What command did you use to try to execute the file?  What happens?
 
 What command did you use to do this?
 ----------
-
+x ./copytobackup.sh
+"XQuartz quit unexpectedly" 
 
 
 ==========
@@ -104,7 +105,7 @@ Write out the code in your file below...
 ==========
 10. Create a directory in your home called test
 ----------
-
+mkdir test
 
 
 ==========
