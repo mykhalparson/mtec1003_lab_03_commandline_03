@@ -153,4 +153,3 @@ drwxr-xr-x   2 mikeparson  staff   64 Feb 20 22:20 backup
 drwxrwxrwx+ 29 mikeparson  staff  928 Feb 20 22:13 ..
 -rw-r--r--   1 mikeparson  staff    0 Feb 20 22:12 1.txt
 -rwxr--r--   1 mikeparson  staff   50 Feb 20 22:11 copytobackup.sh
-Mikes-Air:test mikeparson$ 
